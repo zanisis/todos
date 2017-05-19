@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Todos-fancy</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="css/bulma.css"> -->
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+</head>
+
+<body>
+    <div class="login" id="app">
+        <div id="loginform">
+            <div v-on:click="facebook" id="facebook">
+                <div class="icon is-large">
+                    <i class="fa fa-facebook"></i>
+                </div>
+                <div id="connect">Connect with Facebook</div>
+            </div>
+            <div id="mainlogin">
+                <div id="or">or</div>
+                <h1>Log in with awesome new thing</h1>
+                <form action="#">
+                    <input type="text" placeholder="email" v-model="email" required>
+                    <input type="password" placeholder="password" v-model="password" required>
+                    <button type="button"><i class="fa fa-arrow-right"></i></button>
+                </form>
+                <div id="note"><a href="#">Forgot your password?</a></div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- script -->
+    <script src="https://unpkg.com/vue"></script>
+    <!-- <script src="js/login.js" charset="utf-8"></script> -->
+    <script type="text/javascript">
+        var app = new Vue({
+            el: '#app',
+            data: {
+                email: '',
+                password: ''
+            },
+            methods: {
+                facebook: function() {
+                    console.log('masuk');
+                    window.location='http://localhost:3000/login'
+
+                    // axios.post('http://localhost:3000/login')
+                    // .then((response)=>{
+                    //     console.log(response);
+                    // })
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

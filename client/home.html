@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todos-Fancy</title>
+    <link rel="stylesheet" href="css/bulma.css">
+    <!-- <link rel="stylesheet" href="css/semantic.css"> -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://unpkg.com/vue"></script>
+</head>
+
+<body>
+  <script type="text/x-template" id="modal-template">
+
+  </script>
+    <div id="app">
+        <div class="columns">
+            <div class="column is-2 kiri">
+                <div class="nav-brand">
+                    <div class="nav-center">
+                        <figure class="image is-48x48">
+                            <img src="img/boy.png" alt="">
+                        </figure>
+                    </div>
+                </div>
+                <div class="nav-section">
+                    <!-- <span class="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    </span> -->
+                    <ul class="menu-list nav-menu">
+                        <li>
+                          <a id="modal-create" @click="showModalCreate=true">Create</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a id="logout" @click="logOut">logout</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="column is-10 kanan" id="bar">
+                <nav class="nav" id="bar-logo">
+                    <div class="container">
+                        <div class="nav-center" style="">
+                            <p> Todos Fancy </p>
+                        </div>
+                    </div>
+                </nav>
+                <div id="task">
+                    <div class="box">
+                        <article class="media">
+                            <div class="media-content">
+                                <div class="content">
+                                    <div class="task-div">
+                                        <strong>John Smith</strong>
+                                    </div>
+                                    <p>
+                                        <br> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.
+                                    </p>
+                                </div>
+                                <nav class="level is-mobile">
+                                    <div class="level-left">
+                                        <a class="level-item" @click="showModalEdit=true">
+                                            <span class="icon is-medium"><i class="fa fa-pencil-square-o"></i></span>
+                                        </a>
+                                        <a class="level-item">
+                                            <span class="icon is-medium"><i class="fa fa-times"></i></span>
+                                        </a>
+                                    </div>
+                                </nav>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <modalcreate v-show="showModalCreate" @close="showModalCreate=false">
+          <h3 slot="header" >Create Task</h3>
+        </modalcreate>
+        <modalcreate v-show="showModalEdit" @close="showModalEdit=false">
+          <h3 slot="header" >Task Edit</h3>
+        </modalcreate>
+    </div>
+    <footer class="footer">
+        <p align="center">ada isisnya</p>
+    </footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script type="text/javascript" src="js/bulma.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="text/javascript" src="js/home.js"></script>
+</body>
+
+</html>
